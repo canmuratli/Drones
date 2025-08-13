@@ -8,6 +8,8 @@ TagManager:
   - Ring
   - Logo
   - Health
+  - Border
+  - Buildings
   layers:
   - Default
   - TransparentFX
