@@ -26,10 +26,14 @@ public class DroneManager : MonoBehaviour
             gameManager.playerPoints += 5; 
         }   
         else if (other.CompareTag("Health"))
-        {
-            audioSource.PlayOneShot(healthLogoSound);
-            gameManager.playerHealth += 10; // Decrement player health by 10
-            Destroy(other.gameObject);
+        {   if (gameManager.playerHealth >= 100) return;
+        else if (gameManager.playerHealth < 100) 
+            {
+                audioSource.PlayOneShot(healthLogoSound);
+                gameManager.playerHealth += 10; // Decrement player health by 10
+                Destroy(other.gameObject);
+            }
+                
         }
     }
     private void OnTriggerExit(Collider other)
